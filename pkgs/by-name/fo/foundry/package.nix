@@ -40,7 +40,13 @@ rustPlatform.buildRustPackage (finalAttrs: {
   versionCheckProgram = "${placeholder "out"}/bin/forge";
   doInstallCheck = true;
 
-  passthru.updateScript = nix-update-script { };
+  passthru.updateScript = nix-update-script {
+    extraArgs = [
+      "--use-github-releases"
+      "--version-regex"
+      "^v([0-9]+\\.[0-9]+\\.[0-9]+)$"
+    ];
+  };
 
   env = {
     SVM_RELEASES_LIST_JSON =
