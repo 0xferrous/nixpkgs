@@ -964,6 +964,20 @@ final: prev: {
     meta.hydraPlatforms = [ ];
   };
 
+  ansi-nvim = buildVimPlugin {
+    pname = "ansi.nvim";
+    version = "0-unstable-2026-06-24";
+    src = fetchFromGitHub {
+      owner = "0xferrous";
+      repo = "ansi.nvim";
+      rev = "195b64c3da1c22c2e95648dcbdc6ed075d507064";
+      hash = "sha256-GrU7Q6ZTzSWnZaNoU+yh2BDYweY6RQx6p+RNNvGx8nY=";
+    };
+    meta.homepage = "https://github.com/0xferrous/ansi.nvim/";
+    meta.license = getLicenseFromSpdxId "MIT";
+    meta.hydraPlatforms = [ ];
+  };
+
   ansible-vim = buildVimPlugin {
     pname = "ansible-vim";
     version = "5.0";
